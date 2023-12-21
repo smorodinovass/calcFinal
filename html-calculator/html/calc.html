@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Calc</title>
+		
+		<link rel="stylesheet" href="styles/main.css" />
+		
+		<style>
+			input {
+				display: block;
+				margin:6px;
+				width: 120px;
+				text-align: center;
+			}
+			
+			button {
+				margin: 6px;
+				width: 51px;
+			}
+			
+			.pressed {
+				background-color: pink;
+			}
+		</style>
+		
+		<script>
+		
+			function plus() {
+				
+				console.log("plus");
+				
+				var x,y,z;
+				x = parseFloat(document.getElementById("x").value);
+				y = parseFloat(document.getElementById("y").value);
+				z = x + y;
+				document.getElementById("result").value = z;
+				//document.getElementById("plus").style.color = "red";
+				document.getElementById("plus").classList.add("pressed");
+				document.getElementById("minus").classList.remove("pressed");
+				
+			}
+			
+			function minus() {
+			
+				console.log("minus");
+				
+				var x,y,z;
+				x = parseFloat(document.getElementById("x").value);
+				y = parseFloat(document.getElementById("y").value);
+				z = x - y;
+				document.getElementById("result").value = z;
+				document.getElementById("minus").classList.add("pressed");
+				document.getElementById("plus").classList.remove("pressed");
+			}
+		
+		</script>
+		
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<input id="x"/>
+		<input id="y"/>
+		<button onclick="plus();" id="plus">+</button>
+		<button onclick="minus();" id="minus">-</button>
+		<input id="result"/>
+	</body>
+
+</html>
